@@ -16,12 +16,12 @@ public class FontSelectorDialog extends JDialog {
         setLayout(new BorderLayout());
 
         JPanel centerPanel = new JPanel(new GridLayout(2, 2));
-        // Font family selection
+        // 字体的选择
         centerPanel.add(new JLabel("Font:"));
         fontComboBox = new JComboBox<>(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
         centerPanel.add(fontComboBox);
 
-        // Font size selection
+        // 字体的大小
         centerPanel.add(new JLabel("Size:"));
         fontSizeSpinner = new JSpinner(new SpinnerNumberModel(12, 8, 72, 1));
         centerPanel.add(fontSizeSpinner);
