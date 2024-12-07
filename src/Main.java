@@ -51,12 +51,11 @@ public class Main {
     }
     /**
      * 通过改变binding来改变tab的大小
-     * @param textArea 要修改的文本框
+     * @param textArea   要修改的文本框
      * @param spaceCount tab的大小
      */
     public static void changeTabSize(JTextArea textArea, int spaceCount) {
         String spaces = " ".repeat(spaceCount);
-
         // Create a custom action to insert spaces
         Action insertSpacesAction = new AbstractAction() {
             @Override
@@ -64,7 +63,6 @@ public class Main {
                 textArea.replaceSelection(spaces);
             }
         };
-
         // Bind the Tab key to the custom action
         InputMap inputMap = textArea.getInputMap(JComponent.WHEN_FOCUSED);
         ActionMap actionMap = textArea.getActionMap();
@@ -77,6 +75,7 @@ public class Main {
         JMenuBar menuBar = new JMenuBar();
         JToolBar toolBar = new JToolBar();
         JTextArea textArea = new JTextArea();
+
         changeTabSize(textArea, 4);
         JScrollPane scrollPane = new JScrollPane(textArea);
         FontSelectorDialog fontDialog = new FontSelectorDialog(frame, textArea);
